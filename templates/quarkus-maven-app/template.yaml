@@ -10,9 +10,11 @@ parameters:
   - name: emailRecipient
     displayName: Email address for build notifications
     defaultValue: foo@bar.com
-
-pre_build:
-
-  remote_trigger_stage:
-    - trigger_jobs:
-        - job_url: 'http://localhost:8081/job/test-pipeline/'
+stages:
+  - name: TriggerDownstream
+    type: job
+    jobs:
+      - name: TriggerDownstreamJob
+        type: trigger
+        trigger_jobs:
+          - job_url: "http://localhost:8081/job/test-pipeline/"
