@@ -1,6 +1,6 @@
 type: pipeline-template
 version: 1
-name: Trigger Remote
+name: Trigger-Remote
 description: Quarkus Maven Template 2
 stages:
  - stage: "Trigger Downstream Job"
