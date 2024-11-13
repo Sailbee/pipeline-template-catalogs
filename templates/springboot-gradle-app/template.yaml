@@ -1,10 +1,11 @@
 type: pipeline-template
 version: 1
-
-name: Spring Boot Gradle Template
-description: Spring Boot Gradle Template
-parameters:
-  - name: previewEnvHostname
-    displayName: Preview env hostname
-  - name: emailRecipient
-    displayName: Email address for build notifications
+pre_build:
+  # before:
+  remote_trigger_stage:
+    - trigger_jobs:
+        - job_name: 'test-pipeline'
+          job_auth_params:
+            secret_key: '114c58f50031e4c72df5d3bbeaddd94dad'
+          block_build_until_complete: true
+          enhanced_logging: true
