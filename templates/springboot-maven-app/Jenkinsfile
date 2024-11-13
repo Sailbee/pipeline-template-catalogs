@@ -1,12 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-          steps {
-            echo "${previewEnvHostname}"
-            echo "${emailRecipient}"
-            sh "./mvnw clean install"
-          }
+        stage('Trigger Template') {
+            steps {
+                script {
+                    // Assuming you are using a template catalog to trigger the template
+                    triggerTemplate(name: 'my-pipeline-template', parameters: [])
+                }
+            }
         }
     }
 }
