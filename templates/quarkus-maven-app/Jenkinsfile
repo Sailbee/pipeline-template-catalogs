@@ -2,9 +2,11 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-          steps {
-            echo "HELLO"
-            echo "HELLO"
+          steps { 
+              script {
+                  build job: 'test-pipeline', wait:false
+              }
+
           }
         }
     }
