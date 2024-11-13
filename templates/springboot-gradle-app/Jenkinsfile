@@ -1,35 +1,10 @@
 pipeline {
-    agent {
-        kubernetes {
-            label "sbgr2"
-            defaultContainer "jnlp"
-            yaml """
-apiVersion: v1
-kind: Pod
-spec:
-  containers:
-  - name: gradle
-    image: gradle:latest
-    command:
-    - cat
-    tty: true
-"""
-        }
-    }
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '5'))
-        durabilityHint('PERFORMANCE_OPTIMIZED')
-    }
+    agent any
+
     stages {
-        stage("Prepare Build Environment") {
+        stage('Hello') {
             steps {
-                container("gradle") {
-                    echo "${previewEnvHostname}"
-                    echo "${emailRecipient}"
-                    sh """
-                        gradle --version
-                    """
-                }
+                echo 'Hello World'
             }
         }
     }
