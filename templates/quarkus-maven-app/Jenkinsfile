@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
           steps { 
               script {
-                  build job_url: 'http://localhost:8081/job/test-pipeline', wait:false
+                  sh " echo "hello""
               }
 
           }
