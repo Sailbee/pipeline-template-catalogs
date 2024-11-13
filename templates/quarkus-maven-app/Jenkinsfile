@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build') {
           steps {
-            echo "${previewEnvHostname}"
-            echo "${emailRecipient}"
+            echo "HELLO"
+            echo "HELLO@"
           }
         }
     }
