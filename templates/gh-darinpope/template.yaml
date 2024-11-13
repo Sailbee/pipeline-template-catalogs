@@ -1,5 +1,6 @@
 type: pipeline-template
 version: 1
+name: remote build template
 pre_build:
   # before:
   remote_trigger_stage:
