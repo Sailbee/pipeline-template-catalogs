@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     // Assuming you are using a template catalog to trigger the template
-                    triggerTemplate(name: 'Trigger-Remote')
+                    pipelineTemplate(name: 'Trigger-Remote')
                 }
             }
         }
