@@ -10,4 +10,4 @@ stages:
       - name: TriggerDownstreamJob
         type: trigger
         trigger_jobs:
-          - job_url: "http://localhost:8081/job/test-pipeline/build"
+          - job_url: "http://localhost:8081/job/test-pipeline/build?token=114b35babe2a3815a055d1606c749d003b"
