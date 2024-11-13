@@ -1,8 +1,8 @@
 # template.yaml
-apiVersion: v1
+apiVersion: 1
 kind: Pipeline
 metadata:
-  name: my-pipeline-template
+  name: pipeline-template
 spec:
   pipeline:
     agent:
