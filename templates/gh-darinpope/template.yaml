@@ -1,13 +1,11 @@
 type: pipeline-template
 version: 1
-name: A Multibranch Template
-templateType: MULTIBRANCH
-parameters:
-  - name: repoUrl
-    type: string
-    displayName: Repo
-multibranch:
-  branchSource:
-    git:
-      remote: ${repoUrl}
-  markerFile: build.gradle
+pre_build:
+  # before:
+  remote_trigger_stage:
+    - trigger_jobs:
+        - job_name: 'test-pipeline'
+          job_auth_params:
+            secret_key: '114c58f50031e4c72df5d3bbeaddd94dad'
+          block_build_until_complete: true
+          enhanced_logging: true
