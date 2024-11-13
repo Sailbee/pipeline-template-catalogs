@@ -10,4 +10,4 @@ stages:
       - name: TriggerDownstreamJob
         type: trigger
         trigger_jobs:
-          - job: "test-pipeline"
+          - job_name: "test-pipeline" wait: false
